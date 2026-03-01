@@ -1,7 +1,8 @@
+import { env } from "$env/dynamic/private";
 import { readdir, readFile } from "node:fs/promises";
 
 export default async function getStats() {
-  const uuids = (await readdir("./input")).map((filename) =>
+  const uuids = (await readdir(env.STATS_DIR)).map((filename) =>
     filename.substring(0, filename.length - 5),
   );
 
