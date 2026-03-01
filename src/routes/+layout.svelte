@@ -17,6 +17,7 @@
       min-height: 100vh;
       margin: 0;
       background: #121212;
+      overflow-x: hidden;
     }
 
     main {
