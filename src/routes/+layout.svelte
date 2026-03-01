@@ -20,7 +20,7 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 500px;
       min-height: calc(100vh - 32px);
       margin: 0 auto;
       padding: 16px 22px;

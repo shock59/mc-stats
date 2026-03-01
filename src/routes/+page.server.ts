@@ -35,17 +35,6 @@ export const load = async ({ fetch }) => {
   );
 
   return {
-    text: stats
-      .map((s) => {
-        const number =
-          s.data[`minecraft:${stat.name[0]}`][`minecraft:${stat.name[1]}`] ?? 0;
-        return {
-          value: number,
-          message: `${s.username}: ${stat.formatter(number)}`,
-        };
-      })
-      .toSorted((a, b) => b.value - a.value)
-      .map((o) => o.message)
-      .join("\n"),
+    stats,
   };
 };
