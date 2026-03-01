@@ -1,5 +1,4 @@
 <script lang="ts">
-  import language from "$lib/language";
   import { onMount } from "svelte";
   import type { PageProps } from "./$types";
   import Fuse from "fuse.js";
