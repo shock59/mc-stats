@@ -1,7 +1,20 @@
 import { env } from "$env/dynamic/private";
 import { readdir, readFile } from "node:fs/promises";
 
+let cache: {
+  updated: number;
+  data: {
+    uuid: string;
+    username: string;
+    data: Record<string, Record<string, number>>;
+  }[];
+};
+
 export default async function getStats() {
+  if (cache && Date.now() - cache.updated < 30_000) {
+    return cache.data;
+  }
+
   const uuids = (await readdir(env.STATS_DIR)).map((filename) =>
     filename.substring(0, filename.length - 5),
   );
@@ -24,5 +37,9 @@ export default async function getStats() {
     }),
   );
 
+  cache = {
+    updated: Date.now(),
+    data: stats,
+  };
   return stats;
 }
