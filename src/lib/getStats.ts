@@ -27,7 +27,7 @@ export default async function getStats() {
       const json = await response.json();
       const username = json.data.player.username as string;
 
-      const file = await readFile(`./input/${uuid}.json`, "utf-8");
+      const file = await readFile(`${env.STATS_DIR}/${uuid}.json`, "utf-8");
       const data = JSON.parse(file).stats as Record<
         string,
         Record<string, number>
