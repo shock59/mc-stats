@@ -32,8 +32,6 @@
   }
 </script>
 
-<h1>Minecraft Stats</h1>
-
 <h2>
   {language[`stat.${data.statName.replace(":", ".")}` as keyof typeof language]}
 </h2>
@@ -52,9 +50,9 @@
 {/each}
 
 <style>
-  h1 {
+  h2 {
     margin-top: 0;
-    font-size: xx-large;
+    font-size: x-large;
   }
 
   div.player {
