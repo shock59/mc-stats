@@ -68,6 +68,8 @@
   }
 
   div.player img {
+    width: 16px;
+    height: 16px;
     margin-right: 8px;
     vertical-align: text-top;
     image-rendering: pixelated;

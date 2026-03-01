@@ -1,4 +1,4 @@
-import { readdir, readFile } from "node:fs/promises";
+import getStats from "$lib/getStats.js";
 
 const timeStats = [
   "minecraft:sneak_time",
@@ -37,27 +37,7 @@ const distanceStats = [
 ];
 
 export const load = async ({ params }) => {
-  const uuids = (await readdir("./input")).map((filename) =>
-    filename.substring(0, filename.length - 5),
-  );
-
-  const stats = await Promise.all(
-    uuids.map(async (uuid) => {
-      const response = await fetch(
-        `https://playerdb.co/api/player/minecraft/${uuid}`,
-      );
-      const json = await response.json();
-      const username = json.data.player.username as string;
-
-      const file = await readFile(`./input/${uuid}.json`, "utf-8");
-      const data = JSON.parse(file).stats as Record<
-        string,
-        Record<string, number>
-      >;
-
-      return { uuid, username, data };
-    }),
-  );
+  const stats = await getStats();
 
   const statName = `minecraft:${params.stat}`;
   return {
