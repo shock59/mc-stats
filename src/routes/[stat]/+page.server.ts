@@ -45,7 +45,12 @@ export const load = async ({ params }) => {
     stats: stats.toSorted(
       (a, b) =>
         (b.data["minecraft:custom"][statName] ?? 0) -
-        (a.data["minecraft:custom"][statName] ?? 0),
+          (a.data["minecraft:custom"][statName] ?? 0) ||
+        (a.username.toLowerCase() < b.username.toLowerCase()
+          ? -1
+          : a.username.toLowerCase() > b.username.toLowerCase()
+            ? 1
+            : 0),
     ),
     type: timeStats.includes(statName)
       ? "time"

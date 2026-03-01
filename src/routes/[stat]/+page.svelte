@@ -37,12 +37,16 @@
 </h2>
 
 {#each data.stats as player}
-  <div class="player">
+  <div
+    class="player {(player.data['minecraft:custom'][data.statName] ?? 0) == 0
+      ? 'gray'
+      : ''}"
+  >
     <img
       src="https://minotar.net/helm/{player.uuid}/16"
       alt={player.username}
     />
-    {player.username}
+    <span>{player.username}</span>
     <span class="right"
       >{format(player.data["minecraft:custom"][data.statName] ?? 0)}</span
     >
@@ -71,6 +75,10 @@
     margin-right: 8px;
     vertical-align: text-top;
     image-rendering: pixelated;
+  }
+
+  div.player.gray * {
+    opacity: 0.5;
   }
 
   .right {
