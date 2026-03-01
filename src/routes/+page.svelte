@@ -24,11 +24,8 @@
 
     const fuse = new Fuse(data.stats, {
       threshold: 0.3,
-
       keys: ["name"],
     });
-
-    console.log(fuse);
 
     searchedStats = fuse.search(query.trim()).map((result) => result.item);
   }
