@@ -37,7 +37,7 @@
 <br />
 
 {#each searchedStats as stat}
-  <a href="/{stat.id.replace('minecraft:', '')}">
+  <a href="/custom/{stat.id.replace('minecraft:', '')}">
     <div class="stat">
       {#if stat.crownUuid}
         <img

@@ -23,6 +23,12 @@
 </svelte:head>
 
 <div id="container">
+  <nav>
+    <a href="/custom">General</a>
+    <a href="/item">Items</a>
+    <a href="/mob">Mobs</a>
+  </nav>
+
   <main>
     {@render children()}
   </main>
@@ -42,11 +48,23 @@
     margin: 0 auto;
     padding: 16px 22px;
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     color: #d0d0d0;
     background: #1a1a1a;
     font-family: "Minecraft Seven", sans-serif;
     font-size: 16px;
+  }
+
+  nav {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 0 16px;
+    text-decoration: none;
+    color: inherit;
   }
 
   footer {
@@ -75,6 +93,7 @@
     color: #5398ff;
   }
 
+  nav a:hover,
   footer a:hover {
     text-decoration: underline;
   }
