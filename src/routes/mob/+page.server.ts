@@ -9,9 +9,9 @@ export const load = async ({ params }) => {
     ...new Set(
       statData
         .map((player) =>
-          Object.keys(player.data)
+          Object.keys(player.stats)
             .filter((key) => filter.includes(key))
-            .map((key) => Object.keys(player.data[key])),
+            .map((key) => Object.keys(player.stats[key])),
         )
         .flat(2),
     ),

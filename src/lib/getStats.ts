@@ -6,7 +6,8 @@ let cache: {
   data: {
     uuid: string;
     username: string;
-    data: Record<string, Record<string, number>>;
+    stats: Record<string, Record<string, number>>;
+    advancements: Record<string, { done: boolean }>;
   }[];
 };
 
@@ -15,7 +16,7 @@ export default async function getStats() {
     return cache.data;
   }
 
-  const uuids = (await readdir(env.STATS_DIR)).map((filename) =>
+  const uuids = (await readdir(`${env.DIR}/stats`)).map((filename) =>
     filename.substring(0, filename.length - 5),
   );
 
@@ -27,13 +28,25 @@ export default async function getStats() {
       const json = await response.json();
       const username = json.data.player.username as string;
 
-      const file = await readFile(`${env.STATS_DIR}/${uuid}.json`, "utf-8");
-      const data = JSON.parse(file).stats as Record<
+      const statsFile = await readFile(
+        `${env.DIR}/stats/${uuid}.json`,
+        "utf-8",
+      );
+      const stats = JSON.parse(statsFile).stats as Record<
         string,
         Record<string, number>
       >;
 
-      return { uuid, username, data };
+      const advancementsFile = await readFile(
+        `${env.DIR}/advancements/${uuid}.json`,
+        "utf-8",
+      );
+      const advancements = JSON.parse(advancementsFile) as Record<
+        string,
+        { done: boolean }
+      >;
+
+      return { uuid, username, stats, advancements };
     }),
   );
 

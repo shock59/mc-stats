@@ -38,7 +38,7 @@
 
 {#each data.stats as player}
   <div
-    class="player {(player.data['minecraft:custom'][data.statName] ?? 0) == 0
+    class="player {(player.stats['minecraft:custom'][data.statName] ?? 0) == 0
       ? 'gray'
       : ''}"
   >
@@ -48,7 +48,7 @@
     />
     <span>{player.username}</span>
     <span class="right"
-      >{format(player.data["minecraft:custom"][data.statName] ?? 0)}</span
+      >{format(player.stats["minecraft:custom"][data.statName] ?? 0)}</span
     >
   </div>
 {/each}

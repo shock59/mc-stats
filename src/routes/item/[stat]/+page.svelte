@@ -46,7 +46,7 @@
 {#each data.stats as player}
   <div
     class="player {types
-      .map((type) => player.data[type]?.[data.statName] ?? 0)
+      .map((type) => player.stats[type]?.[data.statName] ?? 0)
       .reduce((accumulator, currentValue) => accumulator + currentValue) == 0
       ? 'gray'
       : ''}"
@@ -59,7 +59,7 @@
     <span>{player.username}</span>
     {#each types as type}
       <span class="right"
-        >{format(player.data[type]?.[data.statName] ?? 0)}</span
+        >{format(player.stats[type]?.[data.statName] ?? 0)}</span
       >
     {/each}
   </div>

@@ -77,9 +77,9 @@ export default {
   "advancements.adventure.play_jukebox_in_meadows.description":
     "Make the Meadows come alive with the sound of music from a Jukebox",
   "advancements.adventure.play_jukebox_in_meadows.title": "Sound of Music",
-  "advancements.adventure.read_power_from_chiseled_bookshelf.description":
+  "advancements.adventure.read_power_of_chiseled_bookshelf.description":
     "Read the power signal of a Chiseled Bookshelf using a Comparator",
-  "advancements.adventure.read_power_from_chiseled_bookshelf.title":
+  "advancements.adventure.read_power_of_chiseled_bookshelf.title":
     "The Power of Books",
   "advancements.adventure.revaulting.description":
     "Unlock an Ominous Vault with an Ominous Trial Key",
@@ -195,9 +195,9 @@ export default {
   "advancements.husbandry.balanced_diet.description":
     "Eat everything that is edible, even if it's not good for you",
   "advancements.husbandry.balanced_diet.title": "A Balanced Diet",
-  "advancements.husbandry.breed_all_animals.description":
+  "advancements.husbandry.bred_all_animals.description":
     "Breed all the animals!",
-  "advancements.husbandry.breed_all_animals.title": "Two by Two",
+  "advancements.husbandry.bred_all_animals.title": "Two by Two",
   "advancements.husbandry.breed_an_animal.description":
     "Breed two animals together",
   "advancements.husbandry.breed_an_animal.title": "The Parrots and the Bats",
@@ -222,9 +222,9 @@ export default {
   "advancements.husbandry.make_a_sign_glow.description":
     "Make the text of any kind of sign glow",
   "advancements.husbandry.make_a_sign_glow.title": "Glow and Behold!",
-  "advancements.husbandry.netherite_hoe.description":
+  "advancements.husbandry.obtain_netherite_hoe.description":
     "Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices",
-  "advancements.husbandry.netherite_hoe.title": "Serious Dedication",
+  "advancements.husbandry.obtain_netherite_hoe.title": "Serious Dedication",
   "advancements.husbandry.obtain_sniffer_egg.description":
     "Obtain a Sniffer Egg",
   "advancements.husbandry.obtain_sniffer_egg.title": "Smells Interesting",

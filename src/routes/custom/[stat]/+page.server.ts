@@ -44,8 +44,8 @@ export const load = async ({ params }) => {
     statName: statName,
     stats: stats.toSorted(
       (a, b) =>
-        (b.data["minecraft:custom"][statName] ?? 0) -
-          (a.data["minecraft:custom"][statName] ?? 0) ||
+        (b.stats["minecraft:custom"][statName] ?? 0) -
+          (a.stats["minecraft:custom"][statName] ?? 0) ||
         (a.username.toLowerCase() < b.username.toLowerCase()
           ? -1
           : a.username.toLowerCase() > b.username.toLowerCase()

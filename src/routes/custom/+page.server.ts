@@ -6,19 +6,19 @@ export const load = async ({ params }) => {
   const stats = [
     ...new Set(
       statData.flatMap((player) =>
-        Object.keys(player.data["minecraft:custom"]),
+        Object.keys(player.stats["minecraft:custom"]),
       ),
     ),
   ]
     .map((stat) => {
       const sortedRanking = statData.toSorted(
         (a, b) =>
-          (b.data["minecraft:custom"][stat] ?? 0) -
-          (a.data["minecraft:custom"][stat] ?? 0),
+          (b.stats["minecraft:custom"][stat] ?? 0) -
+          (a.stats["minecraft:custom"][stat] ?? 0),
       );
       const crownUuid =
-        sortedRanking[0].data["minecraft:custom"][stat] ==
-        sortedRanking[1].data["minecraft:custom"][stat]
+        sortedRanking[0].stats["minecraft:custom"][stat] ==
+        sortedRanking[1].stats["minecraft:custom"][stat]
           ? undefined
           : sortedRanking[0].uuid;
 

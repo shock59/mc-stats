@@ -18,10 +18,10 @@ export const load = async ({ params }) => {
     stats: stats.toSorted(
       (a, b) =>
         types
-          .map((type) => b.data[type]?.[statName] ?? 0)
+          .map((type) => b.stats[type]?.[statName] ?? 0)
           .reduce((accumulator, currentValue) => accumulator + currentValue) -
           types
-            .map((type) => a.data[type]?.[statName] ?? 0)
+            .map((type) => a.stats[type]?.[statName] ?? 0)
             .reduce(
               (accumulator, currentValue) => accumulator + currentValue,
             ) ||

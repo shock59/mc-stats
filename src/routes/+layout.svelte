@@ -27,6 +27,7 @@
     <a href="/custom">General</a>
     <a href="/item">Items</a>
     <a href="/mob">Mobs</a>
+    <a href="/advancement">Advancements</a>
   </nav>
 
   <main>
