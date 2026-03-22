@@ -6,15 +6,6 @@ export const load = async ({ params }) => {
   const stats = [
     ...new Set(statData.flatMap((player) => Object.keys(player.advancements))),
   ]
-    .filter(
-      (stat) =>
-        !(
-          stat.startsWith("minecraft:recipes/") ||
-          !stat.startsWith("minecraft:") ||
-          stat.endsWith("/root") ||
-          stat == "DataVersion"
-        ),
-    )
     .map((stat) => {
       return {
         id: stat,

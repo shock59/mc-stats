@@ -8807,4 +8807,6 @@ export default {
   "tutorial.socialInteractions.description": "Press %s to open",
   "tutorial.socialInteractions.title": "Social Interactions",
   "upgrade.minecraft.netherite_upgrade": "Netherite Upgrade",
+  "stat.minecraft.special_advancements": "Advancements Obtained",
+  "stat.minecraft.special_crowns": "Number of Crowns",
 };
