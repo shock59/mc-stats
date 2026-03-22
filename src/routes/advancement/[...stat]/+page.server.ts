@@ -5,8 +5,6 @@ export const load = async ({ params }) => {
 
   const statName = `minecraft:${params.stat}`;
 
-  console.log(statName);
-
   return {
     statName: statName,
     stats: stats.toSorted(
